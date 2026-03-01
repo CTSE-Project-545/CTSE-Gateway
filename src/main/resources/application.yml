@@ -2,18 +2,27 @@ server:
   port: 8080
 
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://accounts.google.com
   cloud:
     gateway:
       routes:
-        - id: 
-          uri: 
+        - id: inventory-service
+          uri: http://localhost:8081
           predicates:
-            # - Path=/inventory/**
-        - id:
-          uri: 
+            - Path=/inventory/**
+        - id: payment-service
+          uri: http://localhost:8082
           predicates:
-            # - Path=/payments/**
-        - id: 
-          uri: 
+            - Path=/payment/**
+        - id: order-service
+          uri: http://localhost:8083
           predicates:
-            # - Path=/orders/**
+            - Path=/order/**
+        - id: customer-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/customer/**
