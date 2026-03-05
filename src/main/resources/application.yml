@@ -1,12 +1,10 @@
 server:
   port: 8080
 
+jwt:
+  secret: ${JWT_SECRET:l7o6dF8Zq2B8q2QhP7o5vV9jH1l9N3bC0QyWvE9l8sZbU6dQk1jH9rT5pQ2mX7nC}
+
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: https://accounts.google.com
   cloud:
     gateway:
       routes:
