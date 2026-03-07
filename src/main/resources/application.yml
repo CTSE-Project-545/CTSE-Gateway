@@ -8,16 +8,16 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: inventory-service
+        - id: INVENTORY-SERVICE
           uri: http://localhost:8081
           predicates:
             - Path=/inventory/**
-        - id: payment-service
+        - id: PAYMENT-SERVICE
           uri: http://localhost:8082
           predicates:
             - Path=/payment/**
-        - id: order-service
-          uri: http://localhost:8083
+        - id: ORDER-SERVICE
+          uri: https://ctseorderserviceapp.purplecoast-1718a0fd.centralindia.azurecontainerapps.io
           predicates:
             - Path=/order/**
         - id: customer-service
